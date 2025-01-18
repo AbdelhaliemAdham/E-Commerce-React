@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/AbdelhaliemAdham/E-Commerce-React",
+  "homepage": "https://abdelhaliemadham.github.io/E-Commerce-React/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
