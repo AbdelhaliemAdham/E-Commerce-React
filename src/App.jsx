@@ -12,30 +12,36 @@ import { ThemeProvider } from "./store/ThemeContext";
 import { SearchProvider } from "./store/SearchContext";
 import { Helmet } from "react-helmet";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+
+      element: <Home />,
+    },
+    {
+      path: "allProducts",
+      element: <AllProducts />,
+      loader: ProductLoader,
+    },
+    {
+      path: "allProducts/:productId",
+      element: <ProductDetails />,
+      loader: ProductDetailsLoader,
+    },
+    {
+      path: "about",
+      element: <About />,
+    },
+    {
+      path: "cart",
+      element: <CartPage />,
+    },
+  ],
   {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "allProducts",
-    element: <AllProducts />,
-    loader: ProductLoader,
-  },
-  {
-    path: "allProducts/:productId",
-    element: <ProductDetails />,
-    loader: ProductDetailsLoader,
-  },
-  {
-    path: "about",
-    element: <About />,
-  },
-  {
-    path: "cart",
-    element: <CartPage />,
-  },
-]);
+    basename: "/E-Commerce-React",
+  }
+);
 
 function App() {
   return (
