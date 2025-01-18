@@ -1,0 +1,68 @@
+h2 {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: "DM Sans", serif;
+}
+.totalPrice {
+    /* align-self: center; */
+   margin: 0 auto;
+   color: #aa8080;
+   font-size: large;
+   font-weight: bold;
+}
+
+.clearButton{
+    background-color: rgb(101, 7, 7);
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    color: aliceblue;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+}
+
+.Grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
+    gap: 16px;
+}
+
+.CartPage {
+    width: fit-content;
+    margin: 0.6rem auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart img {
+    width: 10rem;
+    margin: 0.6rem auto;
+    align-items: center;
+    border-radius: 0.3rem;
+    box-shadow: 2px 6px 1rem 0.1rem rgb(132, 127, 127);
+}
+
+.cart button {
+    background-color: black;
+    color: white;
+    border-radius: 0.2rem;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    margin: 1rem 0.5rem;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.cart ul {
+    list-style: none;
+}
+
+.priceSpan {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: rgb(119, 19, 52);
+}
