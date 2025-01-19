@@ -1,3 +1,12 @@
+
+:root {
+    --black-color:black;
+  --primary-color: rgb(15, 21, 203);
+  --button-background: var(--primary-color);
+  --button-hover-background: rgb(20, 97, 165);
+  --button-text-color: white;
+}
+
 .home-view{
            
         margin: 0 auto;
@@ -13,7 +22,7 @@
     top: 10rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2rem;
-    color: white;
+    color: var(--button-text-color);
     flex-direction: column;
     text-shadow: 3px 5px 1rem  black ;
     margin: 0 1.5rem;
@@ -27,7 +36,7 @@
     font-family: cursive;
     padding: 5px 10px;
     font-size: 1rem;
-    background-color: black;
+    background-color: var(--primary-color);
     color: aliceblue;
     border-radius: .4rem;
     border: none;
@@ -37,7 +46,7 @@
 }
 .textInfo button:hover{
     animation: buttonAnimation 0.5s forwards;
-    background-color: rgb(33, 32, 32);
+    background-color: var(--button-hover-background)
 }
 @keyframes buttonAnimation{
     0%{

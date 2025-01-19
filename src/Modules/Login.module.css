@@ -1,3 +1,72 @@
-.pageContainer{
-    background-image: "../assets/background.jpg";
+:root {
+    --black-color:black;
+  --primary-color: rgb(143, 27, 197);
+  --secondary-color: green;
+  --background-color: #f5f5f5;
+  --input-border-color: gray;
+  --input-focus-border-color: green;
+  --button-background: var(--primary-color);
+  --button-hover-background: rgb(120, 20, 165);
+  --button-text-color: white;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url("../assets/Online.jpg");
+  background-size: cover;
+  background-position: center; 
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box; 
+}
+
+.pageContainer h1 {
+  font-family: monospace;
+  color: var(--button-text-color);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px; 
+  background-color: rgba(255, 255, 255, 0.9); 
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.form input {
+  margin-bottom: 1rem;
+  padding: 10px 20px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 3rem;
+  font-size: 1rem;
+  outline: none; 
+  transition: border-color 0.3s ease; 
+}
+
+.form input:focus {
+  border-color: var(--input-focus-border-color);
+}
+
+.form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3rem;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.form button:hover {
+  background-color: var(--button-hover-background);
 }

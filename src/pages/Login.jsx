@@ -35,7 +35,8 @@ const LoginPage = () => {
 
   return (
     <div className={classes.pageContainer}>
-      <form onSubmit={handleSubmit}>
+      <h1>Login</h1>
+      <form className={classes.form} onSubmit={handleSubmit}>
         <input
           type="email"
           value={email}
