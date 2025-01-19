@@ -32,7 +32,7 @@ function Input() {
       />
       <button
         onClick={handleSearch}
-        className="btn btn-outline-success"
+        className="btn btn-outline-primary"
         type="button"
       >
         Search

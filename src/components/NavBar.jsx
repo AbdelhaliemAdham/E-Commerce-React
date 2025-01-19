@@ -3,10 +3,12 @@ import img from "../assets/react.svg";
 import { Link } from "react-router-dom";
 import Input from "./Input";
 import { ThemeContext } from "../store/ThemeContext";
-import { SvgIcon, Switch } from "@mui/material";
+import { IconButton, Switch } from "@mui/material";
 import { CartContext } from "../store/CartContext";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { motion } from "motion/react";
+import IconButtonWithBadge from "./IconButtonWithBadge";
+import Logout from "@mui/icons-material/Logout";
+import { logout } from "../auth/auth";
 
 export default function NavBar() {
   const { darkMode, toggleTheme } = useContext(ThemeContext);
@@ -22,11 +24,14 @@ export default function NavBar() {
     <nav className={navbarClass} data-bs-theme={dataTheme}>
       <div className="container-fluid">
         <img src={img} alt="logo" />
-        <a className="navbar-brand" href="/">
-          <span className="badge bg-light text-dark p-2 m-1">Store App</span>
+        <a className="navbar-brand m-1" href="/">
+          <span className="badge bg-light text-dark p-2">E-Commerce</span>
         </a>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <div
+          className="collapse navbar-collapse mt-2"
+          id="navbarSupportedContent"
+        >
+          <ul className="navbar-nav me-auto">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
                 Home
@@ -34,18 +39,21 @@ export default function NavBar() {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/AllProducts">
-                All Products
+                Products
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">
+                about
               </Link>
             </li>
             <motion.li className="nav-item">
               <Link className="nav-link" to="/cart">
-                <SvgIcon component={ShoppingCartIcon}></SvgIcon>
-                <p style={{ display: "inline", fontWeight: "bold" }}>
-                  {cartItems.length}
-                </p>
+                <IconButtonWithBadge numberOfItems={cartItems.length} />
               </Link>
             </motion.li>
           </ul>
+
           <Input />
           <p
             style={{
@@ -68,6 +76,10 @@ export default function NavBar() {
               title="Theme"
               value={darkMode}
             />
+            <IconButton onClick={logout}>
+              {" "}
+              <Logout color="primary" />{" "}
+            </IconButton>
           </p>
         </div>
       </div>

@@ -1,0 +1,35 @@
+.aboutContainer {
+    padding: 4rem 0;
+}
+
+.cardImage {
+    margin: 1.5rem;
+    width: 500px;
+    border-radius: 0.4rem;
+    overflow: hidden;
+}
+
+.aboutTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin-bottom: 1.7rem;
+}
+
+.aboutSubTitle {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contactButton {
+    /* background-color: #333; */
+    margin: 1rem 0;
+    font-weight: bold;
+    padding: 10 20px;
+    font-size: 1.2rem;
+}
+
+.contactButton a {
+    color: #fff;
+    text-decoration: none;
+}

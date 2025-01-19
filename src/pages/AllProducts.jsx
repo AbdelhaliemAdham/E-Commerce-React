@@ -67,7 +67,7 @@ export default function AllProducts() {
   return (
     <div className={classes[cssClass]}>
       <Helmet>
-        <title>All Products</title>
+        <title>Products</title>
       </Helmet>
       <NavBar />
       {content}

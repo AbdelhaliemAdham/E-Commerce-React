@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist" 
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -18,8 +18,10 @@
     "@mui/icons-material": "^6.3.1",
     "@mui/material": "^6.3.1",
     "bootstrap": "^5.3.3",
+    "firebase": "^11.2.0",
     "motion": "^11.17.0",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.7",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^7.1.1"

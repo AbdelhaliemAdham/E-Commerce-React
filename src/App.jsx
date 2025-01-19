@@ -1,4 +1,5 @@
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import AllProducts, { loader as ProductLoader } from "./pages/AllProducts";
@@ -11,13 +12,29 @@ import ProductDetails, {
 import { ThemeProvider } from "./store/ThemeContext";
 import { SearchProvider } from "./store/SearchContext";
 import { Helmet } from "react-helmet";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Register from "./pages/Register";
+import LoginPage from "./pages/Login";
 
 const router = createBrowserRouter(
   [
     {
       path: "/",
+      element: (
+        <ProtectedRoute>
+          <Home />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/login",
 
-      element: <Home />,
+      element: <LoginPage />,
+    },
+    {
+      path: "/register",
+
+      element: <Register />,
     },
     {
       path: "allProducts",

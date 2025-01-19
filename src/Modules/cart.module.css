@@ -1,68 +1,112 @@
 h2 {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bold;
+  font-family: "DM Sans", serif;
+}
+.itemNumber{
     text-align: center;
-    font-size: xx-large;
+  font-family: "DM Sans", serif;
+}
+.itemNumber span{
+    color: rgb(21, 198, 5);
     font-weight: bold;
-    font-family: "DM Sans", serif;
 }
 .totalPrice {
-    /* align-self: center; */
-   margin: 0 auto;
-   color: #aa8080;
-   font-size: large;
-   font-weight: bold;
+  /* align-self: center; */
+  position: fixed;
+  border-radius: 0.3rem;
+  background: linear-gradient(180deg,rgb(198, 87, 185),rgb(179, 87, 186));
+  top: 13rem;
+  right: 4rem;
+  background-color: "white";
+  width: 20rem;
+  padding: 50px 20px;
+  font-size: large;
+  box-shadow: 1px 5px 5px grey;
+  font-weight: bold;
+}
+.totalPrice li{
+    color: aliceblue; 
+}
+.totalPrice input {
+  border-radius: 0.5rem;
+  padding: 5px 10px;
+  border: 1px solid transparent; /* Add a transparent border */
 }
 
-.clearButton{
-    background-color: rgb(101, 7, 7);
-    padding: 0.5rem 1rem;
-    border-radius: 0.4rem;
-    color: aliceblue;
-    font-weight: bold;
-    margin: 0 auto;
-    margin-bottom: 0.5rem;
+.totalPrice input:focus {
+  border-color: '#ff12' ; 
+  outline: none; 
+}
+.totalPrice > ul>li>button{
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+.totalPrice > ul > li {
+  list-style: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+.clearButton {
+  background-color: rgb(70, 7, 101);
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  color: aliceblue;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+}
+.itemTitle {
+  font-size: 1rem;
+  margin-top: 0.4rem;
 }
 
 .Grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
+  gap: 16px;
 }
 
 .CartPage {
-    width: fit-content;
-    margin: 0.6rem auto;
-    flex-direction: column;
-    align-items: center;
+  width: fit-content;
+  margin: 0.6rem auto;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cart img {
-    width: 10rem;
-    margin: 0.6rem auto;
-    align-items: center;
-    border-radius: 0.3rem;
-    box-shadow: 2px 6px 1rem 0.1rem rgb(132, 127, 127);
+  width: 10rem;
+  margin: 0.6rem auto;
+  align-items: center;
+  border-radius: 0.3rem;
+  /* box-shadow: 2px 6px 1rem 0.1rem rgb(132, 127, 127); */
 }
 
 .cart button {
-    background-color: black;
-    color: white;
-    border-radius: 0.2rem;
-    border: none;
-    padding: 0.3rem 0.8rem;
-    margin: 1rem 0.5rem;
-    transition: transform 0.2s;
+  background-color: rgb(75, 16, 185);
+  color: white;
+  border-radius: 0.2rem;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  margin: 1rem 0.5rem;
+  transition: transform 0.2s;
 }
 
 button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .cart ul {
-    list-style: none;
+  list-style: none;
 }
 
 .priceSpan {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    color: rgb(119, 19, 52);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: rgb(96, 60, 169);
 }
