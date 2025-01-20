@@ -1,0 +1,64 @@
+
+
+
+.Container h1{
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem;
+    
+    color: #f1f1f1;
+}
+.Container h3{
+    font-size: 1rem;
+    color: #f1f1f1;
+    font-weight: 400;
+    
+}
+.Container{
+    height: 100vh;
+    background-image: url("../assets/Online.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px; 
+  background-color: rgba(255, 255, 255, 0.9); 
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+.form input{
+width: 100%;
+  padding: 15px 40px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 4rem;
+  background: rgb(234, 214, 214);
+  outline: none; /* Remove default focus outline */
+  transition: border-color 0.3s ease;
+}
+.from input[type="email"]:focus,
+.from input[type="password"]:focus{
+    border: 2px solid;
+    border-color: rgb(134, 11, 138);
+}
+.submitButton{
+    border-radius: 4rem;
+    margin-top: 1rem;
+}
+
+ .loginText {
+    color: #f1f1f1;
+    margin-top: 2rem;
+    text-decoration: none;
+}
+.loginText span{
+    color: blueviolet;
+    font-weight: bold;
+}

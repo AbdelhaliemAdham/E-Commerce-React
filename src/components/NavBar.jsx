@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import img from "../assets/react.svg";
 import { Link } from "react-router-dom";
 import Input from "./Input";
@@ -13,6 +13,7 @@ import { logout } from "../auth/auth";
 export default function NavBar() {
   const { darkMode, toggleTheme } = useContext(ThemeContext);
   const { cartItems } = useContext(CartContext);
+  const [activeBar, setActiveBar] = useState(1);
 
   const navbarClass = darkMode
     ? "navbar navbar-expand-lg bg-dark border-bottom border-body"
@@ -25,7 +26,11 @@ export default function NavBar() {
       <div className="container-fluid">
         <img src={img} alt="logo" />
         <a className="navbar-brand m-1" href="/">
-          <span className="badge bg-light text-dark p-2">E-Commerce</span>
+          <span
+            className={`badge ${!darkMode ? "text-dark" : "text-light"} p-2`}
+          >
+            E-Commerce
+          </span>
         </a>
         <div
           className="collapse navbar-collapse mt-2"
@@ -33,7 +38,11 @@ export default function NavBar() {
         >
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
+              <Link
+                className="nav-link active bg-blue"
+                aria-current="page"
+                to="/"
+              >
                 Home
               </Link>
             </li>

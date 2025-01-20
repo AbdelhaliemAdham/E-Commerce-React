@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { createUser } from "../auth/auth";
 import { Link } from "react-router-dom";
+import classes from "../Modules/Register.module.css";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -18,9 +19,11 @@ const Register = () => {
   };
 
   return (
-    <>
+    <div className={classes.Container}>
       {" "}
-      <form onSubmit={handleSubmit}>
+      <h1>Register</h1>
+      <h3>Please fill in this form to create an account.</h3>
+      <form className={classes.form} onSubmit={handleSubmit}>
         <input
           type="email"
           value={email}
@@ -35,12 +38,14 @@ const Register = () => {
           placeholder="Password"
           required
         />
-        <button type="submit">Register</button>
+        <button className={classes.submitButton} type="submit">
+          Register
+        </button>
       </form>
-      <Link to={"/login"}>
-        Have an account ? <span>Login</span>{" "}
+      <Link className={classes.loginText} to={"/login"}>
+        You have an account ? <span>Login</span>{" "}
       </Link>
-    </>
+    </div>
   );
 };
 
