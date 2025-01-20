@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "../Modules/home-view.module.css";
+import classes from "./home-view.module.css";
 import { useNavigate } from "react-router-dom";
 
 export default function HomeView() {

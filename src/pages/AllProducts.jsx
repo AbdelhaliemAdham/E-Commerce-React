@@ -38,39 +38,29 @@ export default function AllProducts() {
       </div>
     );
   }
-  let content;
+
   if (filteredProducts.length === 0) {
-    content = (
-      <p className={classes.paragraph}>
-        Sorry, there are no products matching your search.
-      </p>
-    );
-  } else {
-    content = (
-      <>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))",
-            gap: "20px",
-          }}
-        >
-          {filteredProducts.map((product) => (
-            <ProductItem key={product.id} {...product} />
-          ))}
-        </div>
-        <Outlet />
-      </>
-    );
+    return <p>Sorry, there are no products matching your search.</p>;
   }
   const cssClass = darkMode ? `dark` : `light`;
   return (
     <div className={classes[cssClass]}>
       <Helmet>
-        <title>Products</title>
+        <title>All Products</title>
       </Helmet>
       <NavBar />
-      {content}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))",
+          gap: "20px",
+        }}
+      >
+        {filteredProducts.map((product) => (
+          <ProductItem key={product.id} {...product} />
+        ))}
+      </div>
+      <Outlet /> {/* Add this line to render nested routes */}
     </div>
   );
 }

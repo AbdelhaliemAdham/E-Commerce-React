@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { useLoaderData, useNavigation, Link } from "react-router-dom";
 import classes from "../Modules/product-details.module.css";
 import NavBar from "../components/NavBar";
@@ -10,14 +10,6 @@ export default function ProductDetails() {
   const navigation = useNavigation();
   const { darkMode } = useContext(ThemeContext);
   const imageUrl = new URL(product.image, window.location.origin).href;
-
-  useEffect(() => {
-    if (darkMode) {
-      document.body.style.backgroundColor = "#212529";
-    } else {
-      document.body.style.backgroundColor = "#fff";
-    }
-  }, [darkMode]);
   if (navigation.state === "loading") {
     return <div>Loading...</div>;
   }

@@ -3,24 +3,30 @@ import React, { useState } from "react";
 import { createUser } from "../auth/auth";
 import { Link } from "react-router-dom";
 import classes from "../Modules/Register.module.css";
+import Modal from "../components/Modal";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await createUser(email, password);
       alert("Registration successful!");
+      setShowModal(true);
     } catch (error) {
-      alert(error.message);
+      setError(error.message);
+      // alert(error.message);
     }
   };
 
   return (
     <div className={classes.Container}>
-      {" "}
+      {error && <Modal title={"Error"} body={error} />}
+      {showModal && <Modal title={"Error"} body={error} />}
       <h1>Register</h1>
       <h3>Please fill in this form to create an account.</h3>
       <form className={classes.form} onSubmit={handleSubmit}>

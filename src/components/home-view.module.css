@@ -1,0 +1,49 @@
+.home-view{
+           
+        margin: 0 auto;
+        background-image: url("../assets/background.jpg");
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+}
+.textInfo {
+    position: relative;
+    top: 10rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+    color: white;
+    flex-direction: column;
+    text-shadow: 3px 5px 1rem  black ;
+    margin: 0 1.5rem;
+}
+.textInfo h3{
+    font-size: x-large;
+    font-weight: 400;
+}
+.textInfo button{
+    cursor: pointer;
+    font-family: cursive;
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: black;
+    color: aliceblue;
+    border-radius: .4rem;
+    border: none;
+    font-weight: 700;
+    
+
+}
+.textInfo button:hover{
+    animation: buttonAnimation 0.5s forwards;
+    background-color: rgb(33, 32, 32);
+}
+@keyframes buttonAnimation{
+    0%{
+        scale: 1;
+    }
+    100%{
+        scale: 1.05;
+    }
+}
