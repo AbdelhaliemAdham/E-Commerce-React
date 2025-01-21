@@ -2,8 +2,11 @@ import { onAuthStateChanged } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
 
+
+const jsonUser = localStorage.getItem("auth") || null;
+const user = JSON.parse(jsonUser);
 export const AuthContext = createContext({
-  user: null,
+  user: user,
 });
 
 export const AuthProvider = ({ children }) => {
@@ -12,6 +15,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
+      localStorage.setItem("auth", JSON.stringify(user));
     });
     return () => unsubscribe();
   }, []);

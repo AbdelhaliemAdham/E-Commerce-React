@@ -71,3 +71,18 @@ width: 100%;
 .form button:hover {
   background-color: var(--button-hover-background);
 }
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+        color: #fff;
+
+}
+.register a{
+    margin-left: .5rem;
+    color: blueviolet;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}

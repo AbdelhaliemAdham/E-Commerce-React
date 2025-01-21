@@ -1,14 +1,17 @@
 // src/Login.js
 import React, { useContext, useState } from "react";
 import { login } from "../auth/auth";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import classes from "../Modules/Login.module.css";
 import { AuthContext } from "../store/AuthContext";
+import Modal from "../components/Modal";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [error, setError] = useState(null);
+  const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const { user } = useContext(AuthContext);
 
@@ -27,7 +30,7 @@ const LoginPage = () => {
       await login(email, password);
       navigate("/");
     } catch (error) {
-      alert(error.message);
+      setError(error.message);
     } finally {
       setLoading(false);
     }
@@ -36,6 +39,12 @@ const LoginPage = () => {
   return (
     <div className={classes.pageContainer}>
       <h1>Login</h1>
+      {error && (
+        <Modal title={"Error"} body={error} onClose={() => setError(null)} />
+      )}
+      {showModal && (
+        <Modal title={"Error"} body={error} onClose={() => setError(false)} />
+      )}
       <form className={classes.form} onSubmit={handleSubmit}>
         <input
           type="email"
@@ -55,6 +64,9 @@ const LoginPage = () => {
           {loading ? "Logging in..." : "Login"}
         </button>
       </form>
+      <p className={classes.register}>
+        don't have an account ? <Link to={"/register"}>Register</Link>
+      </p>
     </div>
   );
 };

@@ -1,15 +1,21 @@
 // src/Register.js
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { createUser } from "../auth/auth";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import classes from "../Modules/Register.module.css";
 import Modal from "../components/Modal";
+import { AuthContext } from "../store/AuthContext";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const { user } = useContext(AuthContext);
+
+  if (user) {
+    return <Navigate to={"/"} />;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,8 +31,12 @@ const Register = () => {
 
   return (
     <div className={classes.Container}>
-      {error && <Modal title={"Error"} body={error} />}
-      {showModal && <Modal title={"Error"} body={error} />}
+      {error && (
+        <Modal title={"Error"} body={error} onClose={() => setError(null)} />
+      )}
+      {showModal && (
+        <Modal title={"Error"} body={error} onClose={() => setError(false)} />
+      )}
       <h1>Register</h1>
       <h3>Please fill in this form to create an account.</h3>
       <form className={classes.form} onSubmit={handleSubmit}>

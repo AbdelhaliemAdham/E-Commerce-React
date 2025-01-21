@@ -1,31 +1,33 @@
 import React from "react";
-function Modal({ title, body }) {
+
+function Modal({ title, body, onClose }) {
   return (
-    <div class="modal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">{title}</h5>
+    <div
+      className="modal show"
+      style={{ display: "block", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+      tabIndex="-1"
+    >
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title">{title}</h5>
             <button
               type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
+              className="btn-close"
+              onClick={onClose}
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
+          <div className="modal-body">
             <p>{body}</p>
           </div>
-          <div class="modal-footer">
+          <div className="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
+              className="btn btn-secondary"
+              onClick={onClose}
             >
               Close
-            </button>
-            <button type="button" class="btn btn-primary">
-              Save changes
             </button>
           </div>
         </div>

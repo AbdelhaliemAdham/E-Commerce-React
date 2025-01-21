@@ -11,31 +11,51 @@ import ProductDetails, {
 import { ThemeProvider } from "./store/ThemeContext";
 import { SearchProvider } from "./store/SearchContext";
 import { Helmet } from "react-helmet";
+import ProtectedRoute from "./components/ProtectedRoute";
+import LoginPage from "./pages/Login";
+import Register from "./pages/Register";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: (
+        <ProtectedRoute>
+          <Home />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
+      path: "/allProducts",
+      element: <AllProducts />,
+      loader: ProductLoader,
+    },
+    {
+      path: "/allProducts/:productId",
+      element: <ProductDetails />,
+      loader: ProductDetailsLoader,
+    },
+    {
+      path: "/about",
+      element: <About />,
+    },
+    {
+      path: "/cart",
+      element: <CartPage />,
+    },
+  ],
   {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "allProducts",
-    element: <AllProducts />,
-    loader: ProductLoader,
-  },
-  {
-    path: "allProducts/:productId",
-    element: <ProductDetails />,
-    loader: ProductDetailsLoader,
-  },
-  {
-    path: "about",
-    element: <About />,
-  },
-  {
-    path: "cart",
-    element: <CartPage />,
-  },
-]);
+    basename: "/E-Commerce-React",
+  }
+);
 
 function App() {
   return (

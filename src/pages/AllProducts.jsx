@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useLoaderData, Outlet, useLocation } from "react-router-dom";
+import { useLoaderData, Outlet, useLocation, Navigate } from "react-router-dom";
 import { useSearch } from "../store/SearchContext";
 import ProductItem from "../components/ProductItem";
 import NavBar from "../components/NavBar";
 import { Helmet } from "react-helmet";
 import classes from "../Modules/AllProducts.module.css";
 import { ThemeContext } from "../store/ThemeContext";
+import { AuthContext } from "../store/AuthContext";
 export default function AllProducts() {
   const { setSearchProducts } = useSearch();
   const products = useLoaderData();
@@ -13,8 +14,14 @@ export default function AllProducts() {
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [loader, setLoader] = useState(true);
   const { darkMode } = useContext(ThemeContext);
+  const { user } = useContext(AuthContext);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
+    if (!user) {
+      setIsAuthenticated(false);
+      return;
+    }
     const queryParams = new URLSearchParams(location.search);
     const searchQuery = queryParams.get("search") || "";
     setSearchProducts(searchQuery);
@@ -28,6 +35,9 @@ export default function AllProducts() {
     }
   }, [products, location.search, setSearchProducts]);
 
+  if (!isAuthenticated) {
+    return <Navigate to="/login" />;
+  }
   if (loader) {
     return (
       <div
