@@ -20,7 +20,10 @@ This is an E-Commerce web application built with React. The application allows u
 - Context API
 - Tailwind CSS
 - React Helmet
-- Motion
+- Motion animation package
+- React Hook Form
+- Bootstrap
+- Material UI
 - Fake Store API
 
 ## Getting Started
@@ -35,7 +38,7 @@ This is an E-Commerce web application built with React. The application allows u
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/E-Commerce-React.git
+   git clone https://github.com/AbdelhaliemAdham/E-Commerce-React.git
    cd E-Commerce-React
    ```
 
@@ -57,42 +60,6 @@ This is an E-Commerce web application built with React. The application allows u
 
 4. Open your browser and navigate to `http://localhost:3000`.
 
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── Banner.jsx
-│   ├── Head.jsx
-│   ├── HomeView.jsx
-│   ├── NavBar.jsx
-│   ├── ProductItem.jsx
-│   ├── ProductCard.jsx
-│   ├── Rating.jsx
-│   └── ProtectedRoute.jsx
-├── pages/
-│   ├── Home.jsx
-│   ├── AllProducts.jsx
-│   ├── ProductDetails.jsx
-│   ├── About.jsx
-│   ├── Cart-Page.jsx
-│   ├── Login.jsx
-│   └── Register.jsx
-├── store/
-│   ├── CartContext.js
-│   ├── ThemeContext.js
-│   ├── SearchContext.js
-│   └── AuthContext.js
-├── Modules/
-│   ├── AllProducts.module.css
-│   ├── product-item.module.css
-│   ├── product-details.module.css
-│   ├── home-view.module.css
-│   └── head.module.css
-├── App.jsx
-├── index.jsx
-└── index.css
-```
 
 ## Usage
 
@@ -119,10 +86,4 @@ src/
 
 - Toggle between light and dark modes using the theme switcher in the navigation.
 
-## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any changes.
-
-## License
-
-This project is licensed under the MIT License.
