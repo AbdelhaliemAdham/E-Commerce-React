@@ -1,6 +1,6 @@
 import React from "react";
 
-function Modal({ title, body, onClose }) {
+function Modal({ title, body, onClose, onSuccess }) {
   return (
     <div
       className="modal show"
@@ -28,6 +28,13 @@ function Modal({ title, body, onClose }) {
               onClick={onClose}
             >
               Close
+            </button>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={onSuccess}
+            >
+              Login
             </button>
           </div>
         </div>

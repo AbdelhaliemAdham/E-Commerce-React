@@ -5,29 +5,28 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import classes from "../Modules/Login.module.css";
 import { AuthContext } from "../store/AuthContext";
 import Modal from "../components/Modal";
+import { useForm } from "react-hook-form";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const { user } = useContext(AuthContext);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  if (user) {
+  if (user !== null) {
     return <Navigate to={"/"} />;
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!email || !password) {
-      alert("Email and password are required.");
-      return;
-    }
+  const handleSubmitData = async (data) => {
     setLoading(true);
     try {
-      await login(email, password);
+      await login(data.email, data.password);
       navigate("/");
     } catch (error) {
       setError(error.message);
@@ -43,23 +42,39 @@ const LoginPage = () => {
         <Modal title={"Error"} body={error} onClose={() => setError(null)} />
       )}
       {showModal && (
-        <Modal title={"Error"} body={error} onClose={() => setError(false)} />
+        <Modal
+          title={"Error"}
+          body={error}
+          onClose={() => setShowModal(false)}
+        />
       )}
-      <form className={classes.form} onSubmit={handleSubmit}>
+      <form className={classes.form} onSubmit={handleSubmit(handleSubmitData)}>
         <input
+          {...register("email", {
+            required: "Invalid Email type",
+            pattern: /^\S+@\S+$/i,
+          })}
           type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
-          required
         />
+        <p className={classes.validation}>{errors.email?.message}</p>
         <input
+          {...register("password", {
+            required: "Password is required",
+            minLength: {
+              value: 6,
+              message: "Password should be at least 6 characters",
+            },
+            maxLength: {
+              value: 20,
+              message: "Password should not exceed 20 characters",
+            },
+          })}
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
-          required
         />
+        <p className={classes.validation}>{errors.password?.message}</p>
+
         <button type="submit" disabled={loading}>
           {loading ? "Logging in..." : "Login"}
         </button>

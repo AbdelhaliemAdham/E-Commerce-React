@@ -86,3 +86,7 @@ width: 100%;
     text-decoration: none;
     cursor: pointer;
 }
+.validation{
+    color: rgb(92, 6, 6);
+    font-size: .8rem;
+}

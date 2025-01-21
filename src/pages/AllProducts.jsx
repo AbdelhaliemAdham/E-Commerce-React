@@ -14,11 +14,11 @@ export default function AllProducts() {
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [loader, setLoader] = useState(true);
   const { darkMode } = useContext(ThemeContext);
-  const { user } = useContext(AuthContext);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { user, isLoading } = useContext(AuthContext);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   useEffect(() => {
-    if (!user) {
+    if (user === null && !isLoading) {
       setIsAuthenticated(false);
       return;
     }

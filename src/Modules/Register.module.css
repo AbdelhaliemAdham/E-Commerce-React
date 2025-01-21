@@ -62,3 +62,8 @@ width: 100%;
     color: blueviolet;
     font-weight: bold;
 }
+.errors{
+    color: rgb(114, 15, 15);
+    font-size: 0.7rem;
+    margin-left: 0.5rem;
+}

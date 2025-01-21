@@ -1,31 +1,32 @@
-// src/Register.js
 import React, { useContext, useState } from "react";
 import { createUser } from "../auth/auth";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import classes from "../Modules/Register.module.css";
 import Modal from "../components/Modal";
 import { AuthContext } from "../store/AuthContext";
+import { useForm } from "react-hook-form";
 
 const Register = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  if (user) {
+  if (user !== null) {
     return <Navigate to={"/"} />;
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmitData = async (data) => {
     try {
-      await createUser(email, password);
-      alert("Registration successful!");
+      await createUser(data.email, data.password);
       setShowModal(true);
     } catch (error) {
       setError(error.message);
-      // alert(error.message);
     }
   };
 
@@ -34,32 +35,47 @@ const Register = () => {
       {error && (
         <Modal title={"Error"} body={error} onClose={() => setError(null)} />
       )}
+
       {showModal && (
-        <Modal title={"Error"} body={error} onClose={() => setError(false)} />
+        <Modal
+          title={"Successful"}
+          body={"Account created successfully"}
+          onClose={() => setShowModal(false)}
+          onSuccess={() => navigate("/login")}
+        />
       )}
+
       <h1>Register</h1>
       <h3>Please fill in this form to create an account.</h3>
-      <form className={classes.form} onSubmit={handleSubmit}>
+      <form className={classes.form} onSubmit={handleSubmit(handleSubmitData)}>
         <input
           type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          {...register("email", {
+            required: "Invalid Email type",
+            pattern: /^\S+@\S+$/i,
+          })}
           placeholder="Email"
-          required
         />
+        <p className={classes.errors}>{errors.email?.message}</p>
+
         <input
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          {...register("password", {
+            required: "The password length must be between 6 and 20",
+            minLength: 6,
+            maxLength: 20,
+          })}
           placeholder="Password"
-          required
         />
+        <p className={classes.errors}>{errors.password?.message}</p>
+
         <button className={classes.submitButton} type="submit">
           Register
         </button>
       </form>
+
       <Link className={classes.loginText} to={"/login"}>
-        You have an account ? <span>Login</span>{" "}
+        You have an account? <span>Login</span>
       </Link>
     </div>
   );
