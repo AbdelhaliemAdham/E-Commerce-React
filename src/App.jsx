@@ -5,15 +5,15 @@ import AllProducts, { loader as ProductLoader } from "./pages/AllProducts";
 import About from "./pages/about";
 import CartPage from "./pages/Cart-Page";
 import { CartProvider } from "./store/CartContext";
-import ProductDetails, {
-  loader as ProductDetailsLoader,
-} from "./pages/ProductDetails";
 import { ThemeProvider } from "./store/ThemeContext";
 import { SearchProvider } from "./store/SearchContext";
 import { Helmet } from "react-helmet";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LoginPage from "./pages/Login";
 import Register from "./pages/Register";
+import React, { Suspense, lazy } from "react";
+
+const ProductDetails = lazy(() => import("./pages/ProductDetails"));
 
 const router = createBrowserRouter(
   [
@@ -40,7 +40,11 @@ const router = createBrowserRouter(
     },
     {
       path: "/allProducts/:productId",
-      element: <ProductDetails />,
+      element: (
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProductDetails />
+        </Suspense>
+      ),
       loader: ProductDetailsLoader,
     },
     {
