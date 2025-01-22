@@ -1,13 +1,13 @@
-:root {
-  --light-color: #f1f1f1;
-  --primary-color: #3b82f6;
-  --secondary-color: #2563eb;
-  --background-color: #212529;
-  --text-color: #fff;
-  --button-color: #3b82f6;
-  --button-hover-color: #2563eb;
-  --button-text-color: #fff;
-  --button-text-hover-color: #000;
+:root{
+    --light-color:#f1f1f1;
+    --primary-color: #3b82f6;
+    --secondary-color: #2563eb;
+    --background-color: #212529;
+    --text-color: #fff;
+    --button-color: #3b82f6;
+    --button-hover-color: #2563eb;
+    --button-text-color: #fff;
+    --button-text-hover-color: #000;
 }
 
 .banner {
@@ -15,7 +15,6 @@
   color: #fff; /* text-white */
   min-height: 100vh; /* min-h-screen */
 }
-
 .dark {
   background-color: #212529;
   color: white;
@@ -69,6 +68,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem; /* gap-4 */
+  
 }
 
 .buttonPrimary {
@@ -82,10 +82,14 @@
   font-weight: 500; /* font-medium */
   color: #fff; /* text-white */
   text-align: center;
-  text-decoration: none;
-}
+      text-decoration: none;
 
-.buttonPrimaryDark {
+}
+.buttonPrimary:hover{
+  color: #000;
+  background-color: transparent;
+}
+.buttonPrimaryDark{
   display: block;
   width: 100%; /* w-full */
   border-radius: 0.375rem; /* rounded */
@@ -99,15 +103,11 @@
   text-decoration: none;
 }
 
-.buttonPrimaryDark:hover {
+.buttonPrimaryDark:hover{
   background-color: transparent;
-  color: #000;
+  color: #fff;
 }
 
-.buttonPrimary:hover {
-  background-color: transparent; /* hover:bg-transparent */
-  color: #fff; /* hover:text-white */
-}
 
 .buttonSecondary {
   display: block;
@@ -122,7 +122,7 @@
 }
 
 .buttonSecondary:hover {
-  background-color: #3b82f6;
+  background-color: #3b82f6; 
 }
 
 .buttonSecondary:active {
