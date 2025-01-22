@@ -20,8 +20,27 @@ This is an E-Commerce web application built with React. The application allows u
 - Context API
 - Tailwind CSS
 - React Helmet
-- Motion
+- Motion animation package
+- React Hook Form
+- Bootstrap
+- Material UI
 - Fake Store API
+
+## Screens
+**Register Screen**
+![image](https://github.com/user-attachments/assets/7d1150df-ceec-45f7-b6c6-97ad4e3ed000)
+
+**Login Screen**
+![image](https://github.com/user-attachments/assets/d3baca48-04b4-49d3-88b5-f9354dbc8507)
+
+
+**HomePage**
+![Screenshot_22-1-2025_2509_localhost](https://github.com/user-attachments/assets/49b234f6-d1ef-4cec-8c61-a23f5e55fbb3)
+
+
+**Cart Screen**
+![Screenshot_21-1-2025_163535_abdelhaliemadham github io](https://github.com/user-attachments/assets/6759b89e-fea6-4d18-9e48-48c0af585395)
+
 
 ## Getting Started
 
@@ -35,7 +54,7 @@ This is an E-Commerce web application built with React. The application allows u
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/E-Commerce-React.git
+   git clone https://github.com/AbdelhaliemAdham/E-Commerce-React.git
    cd E-Commerce-React
    ```
 
@@ -57,42 +76,6 @@ This is an E-Commerce web application built with React. The application allows u
 
 4. Open your browser and navigate to `http://localhost:3000`.
 
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── Banner.jsx
-│   ├── Head.jsx
-│   ├── HomeView.jsx
-│   ├── NavBar.jsx
-│   ├── ProductItem.jsx
-│   ├── ProductCard.jsx
-│   ├── Rating.jsx
-│   └── ProtectedRoute.jsx
-├── pages/
-│   ├── Home.jsx
-│   ├── AllProducts.jsx
-│   ├── ProductDetails.jsx
-│   ├── About.jsx
-│   ├── Cart-Page.jsx
-│   ├── Login.jsx
-│   └── Register.jsx
-├── store/
-│   ├── CartContext.js
-│   ├── ThemeContext.js
-│   ├── SearchContext.js
-│   └── AuthContext.js
-├── Modules/
-│   ├── AllProducts.module.css
-│   ├── product-item.module.css
-│   ├── product-details.module.css
-│   ├── home-view.module.css
-│   └── head.module.css
-├── App.jsx
-├── index.jsx
-└── index.css
-```
 
 ## Usage
 
@@ -119,10 +102,4 @@ src/
 
 - Toggle between light and dark modes using the theme switcher in the navigation.
 
-## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any changes.
-
-## License
-
-This project is licensed under the MIT License.
