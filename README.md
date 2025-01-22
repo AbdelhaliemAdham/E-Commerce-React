@@ -26,6 +26,22 @@ This is an E-Commerce web application built with React. The application allows u
 - Material UI
 - Fake Store API
 
+## Screens
+**Register Screen**
+![image](https://github.com/user-attachments/assets/7d1150df-ceec-45f7-b6c6-97ad4e3ed000)
+
+**Login Screen**
+![image](https://github.com/user-attachments/assets/d3baca48-04b4-49d3-88b5-f9354dbc8507)
+
+
+**HomePage**
+![Screenshot_22-1-2025_2509_localhost](https://github.com/user-attachments/assets/49b234f6-d1ef-4cec-8c61-a23f5e55fbb3)
+
+
+**Cart Screen**
+![Screenshot_21-1-2025_163535_abdelhaliemadham github io](https://github.com/user-attachments/assets/6759b89e-fea6-4d18-9e48-48c0af585395)
+
+
 ## Getting Started
 
 ### Prerequisites
