@@ -49,6 +49,14 @@ const Register = () => {
       <h3>Please fill in this form to create an account.</h3>
       <form className={classes.form} onSubmit={handleSubmit(handleSubmitData)}>
         <input
+          type="text"
+          {...register("username", {
+            required: "The username length must be between 6 and 20",
+          })}
+          placeholder="username"
+        />
+        <p className={classes.errors}>{errors.username?.message}</p>
+        <input
           type="email"
           {...register("email", {
             required: "Invalid Email type",

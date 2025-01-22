@@ -36,7 +36,9 @@ export default function ProductDetails() {
             {" "}
             <Link to={"/allProducts"}>Back</Link>
           </button>
-          <button>Proceed to Check-out</button>
+          <button className={classes.buttonContainer}>
+            Proceed to Check-out
+          </button>
         </div>
       </div>
     </div>

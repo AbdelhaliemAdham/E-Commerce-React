@@ -4,7 +4,7 @@
 .Container h1{
     text-align: center;
     font-size: 2rem;
-    margin: 2rem;
+    margin: 1rem;
     
     color: #f1f1f1;
 }
@@ -15,18 +15,18 @@
     
 }
 .Container{
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("../assets/Online.jpg");
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .form{
     display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 400px; 
+  max-width: 500px; 
   background-color: rgba(255, 255, 255, 0.9); 
   padding: 2rem;
   border-radius: 1rem;
@@ -35,7 +35,7 @@
 .form input{
 width: 100%;
   padding: 15px 40px;
-  margin: 5px 0 22px 0;
+  margin: 5px 0 5px 0;
   display: inline-block;
   border: none;
   border-radius: 4rem;
@@ -55,8 +55,9 @@ width: 100%;
 
  .loginText {
     color: #f1f1f1;
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-decoration: none;
+    margin-bottom: 1rem;
 }
 .loginText span{
     color: blueviolet;

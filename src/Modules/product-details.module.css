@@ -3,12 +3,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1.5rem auto;
+    margin: 0rem auto;
     max-width: 80%;
+    
 }
 .dark{
     background-color: #212529;
     color: white;
+    
 }
 .dark .page p{
     background-color: #333;
@@ -59,6 +61,18 @@
 }
 
 button {
+ background-color: rgb(120, 77, 255);
+    color: black;
+    padding: 8px 12px;
+    color: #f9f9f9;
+    font-weight: 700;
+    border-radius: 0.4rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+    margin-bottom: 1rem;
+}
+.buttonContainer {
     background-color: rgb(120, 77, 255);
     color: black;
     padding: 8px 12px;
@@ -68,6 +82,7 @@ button {
     border: none;
     cursor: pointer;
     transition: background-color 0.5s ease-in-out;
+    margin-bottom: 1rem;
 }
 
 button:hover {
@@ -77,6 +92,7 @@ button:hover {
 .backButton{
     background-color: rgb(13, 105, 255);
     margin-right: 0.8rem;
+    
 }
 .backButton a{
     color: #ddd;

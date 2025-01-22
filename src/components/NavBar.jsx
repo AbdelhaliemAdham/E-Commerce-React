@@ -13,7 +13,6 @@ import { logout } from "../auth/auth";
 export default function NavBar() {
   const { darkMode, toggleTheme } = useContext(ThemeContext);
   const { cartItems } = useContext(CartContext);
-  const [activeBar, setActiveBar] = useState(1);
 
   const navbarClass = darkMode
     ? "navbar navbar-expand-lg bg-dark border-bottom border-body"

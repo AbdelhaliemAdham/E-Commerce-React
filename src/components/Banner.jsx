@@ -1,34 +1,35 @@
-import React from "react";
-import "../index.css";
+import React, { useContext, useEffect, useState } from "react";
+import styles from "./Banner.module.css";
+import { Link } from "react-router-dom";
+import { ThemeContext } from "../store/ThemeContext";
 
 function Banner() {
+  const { darkMode } = useContext(ThemeContext);
+  const [dark, setDarkMode] = useState(false);
+  useEffect(() => {
+    if (darkMode) {
+      setDarkMode(true);
+    } else {
+      setDarkMode(false);
+    }
+  }, [darkMode]);
   return (
-    <section className="bg-gray-900 text-white min-h-screen">
-      <div className="mx-auto max-w-screen-xl px-4 py-32 flex flex-col lg:flex-row lg:items-center">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
-            Understand User Flow.
-            <span className="sm:block"> Increase Conversion. </span>
+    <section className={dark ? styles.dark : styles.light}>
+      <div className={styles.container}>
+        <div className={styles.textCenter}>
+          <h1 className={`${styles.title} ${styles.titleLarge}`}>
+            Browse All Products .
+            <span className="sm:block"> try our new collection</span>
           </h1>
 
-          <p className="mx-auto mt-4 max-w-xl sm:text-xl">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
-            illo tenetur fuga ducimus numquam ea!
+          <p className={styles.paragraph}>
+            Our New Collection is here. Check out our new products and get 20%
+            off on your first purchase. Hurry up! Limited time offer.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              className="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-              href="#"
-            >
+          <div className={styles.buttonContainer}>
+            <Link className={styles.buttonPrimary} to="/allProducts">
               Get Started
-            </a>
-
-            <a
-              className="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
-              href="#"
-            >
-              Learn More
-            </a>
+            </Link>
           </div>
         </div>
       </div>
