@@ -19,4 +19,4 @@ Please change the parent <Route path="${b}"> to <Route path="${b==="/"?"*":`${b}
  * LICENSE.md file in the root directory of this source tree.
  *
  * @license MIT
- */function ni(e){return m.createElement(ca,{flushSync:Xr.flushSync,...e})}export{Fr as L,ei as N,ti as O,ni as R,qa as a,ge as b,ri as c,Za as d,Cr as u};
+ */function ni(e){return m.createElement(ca,{flushSync:Xr.flushSync,...e})}export{Fr as L,ei as N,ti as O,ni as R,qa as a,ge as b,Za as c,ri as d,Cr as u};
