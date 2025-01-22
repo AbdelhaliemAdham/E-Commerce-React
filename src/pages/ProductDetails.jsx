@@ -1,15 +1,21 @@
 import React, { useContext } from "react";
-import { useLoaderData, useNavigation, Link } from "react-router-dom";
+import { useLoaderData, useNavigation, Link, Navigate } from "react-router-dom";
 import classes from "../Modules/product-details.module.css";
 import NavBar from "../components/NavBar";
 import { Helmet } from "react-helmet";
 import { ThemeContext } from "../store/ThemeContext";
+import { AuthContext } from "../store/AuthContext";
 
 export default function ProductDetails() {
   const product = useLoaderData();
   const navigation = useNavigation();
   const { darkMode } = useContext(ThemeContext);
   const imageUrl = new URL(product.image, window.location.origin).href;
+
+  const { user } = useContext(AuthContext);
+  if (user === null) {
+    return <Navigate to={"/login"} />;
+  }
   if (navigation.state === "loading") {
     return <div>Loading...</div>;
   }

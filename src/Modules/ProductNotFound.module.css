@@ -1,0 +1,65 @@
+.product-not-found {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.product-not-found:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-not-found h2 {
+  color: #d9534f;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.product-not-found p {
+  color: #555;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.product-not-found button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.product-not-found button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .product-not-found {
+    padding: 1rem;
+    max-width: 90%;
+  }
+
+  .product-not-found h2 {
+    font-size: 1.5rem;
+  }
+
+  .product-not-found p {
+    font-size: 1rem;
+  }
+
+  .product-not-found button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

@@ -18,8 +18,8 @@ function Banner() {
       <div className={styles.container}>
         <div className={styles.textCenter}>
           <h1 className={`${styles.title} ${styles.titleLarge}`}>
-            Browse All Products .
-            <span className="sm:block"> try our new collection</span>
+            Browse All Products.
+            <span className="sm:block"> Try our new collection</span>
           </h1>
 
           <p className={styles.paragraph}>
@@ -27,7 +27,10 @@ function Banner() {
             off on your first purchase. Hurry up! Limited time offer.
           </p>
           <div className={styles.buttonContainer}>
-            <Link className={styles.buttonPrimary} to="/allProducts">
+            <Link
+              className={dark ? styles.buttonPrimaryDark : styles.buttonPrimary}
+              to="/allProducts"
+            >
               Get Started
             </Link>
           </div>

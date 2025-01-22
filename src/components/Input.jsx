@@ -1,6 +1,7 @@
 import React from "react";
 import { useSearch } from "../store/SearchContext";
 import { useNavigate } from "react-router-dom";
+import styles from "./Input.module.css";
 
 function Input() {
   const { searchProduct, setSearchProducts } = useSearch();
@@ -10,6 +11,7 @@ function Input() {
     const value = event.target.value;
     setSearchProducts(value);
   };
+
   function handleSearch() {
     if (searchProduct.trim() !== "") {
       navigate(`/allProducts?search=${encodeURIComponent(searchProduct)}`);
@@ -18,23 +20,19 @@ function Input() {
 
   return (
     <form
-      className="d-flex m-2"
+      className={styles.form}
       role="search"
       onSubmit={(e) => e.preventDefault()}
     >
       <input
-        className="form-control me-2"
+        className={styles.input}
         type="search"
         placeholder="Search"
         value={searchProduct}
         onChange={handleChange}
         aria-label="Search"
       />
-      <button
-        onClick={handleSearch}
-        className="btn btn-outline-primary"
-        type="button"
-      >
+      <button onClick={handleSearch} className={styles.button} type="button">
         Search
       </button>
     </form>

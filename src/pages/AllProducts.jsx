@@ -7,6 +7,8 @@ import { Helmet } from "react-helmet";
 import classes from "../Modules/AllProducts.module.css";
 import { ThemeContext } from "../store/ThemeContext";
 import { AuthContext } from "../store/AuthContext";
+import NotFound from "./NotFound";
+import ProductNotFound from "../components/ProductNotFound";
 export default function AllProducts() {
   const { setSearchProducts } = useSearch();
   const products = useLoaderData();
@@ -50,7 +52,7 @@ export default function AllProducts() {
   }
 
   if (filteredProducts.length === 0) {
-    return <p>Sorry, there are no products matching your search.</p>;
+    return <ProductNotFound />;
   }
   const cssClass = darkMode ? `dark` : `light`;
   return (
